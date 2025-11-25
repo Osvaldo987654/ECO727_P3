@@ -1,0 +1,19 @@
+workflows:
+  build-android:
+    name: Build MAUI Android APK
+    environment:
+      vars:
+        DOTNET_VERSION: "8.0.x"
+    scripts:
+      - name: Install .NET SDK
+        script: |
+          sudo apt-get update
+          sudo apt-get install -y dotnet-sdk-8.0
+      - name: Install MAUI workload
+        script: |
+          dotnet workload install maui
+      - name: Build APK
+        script: |
+          dotnet publish Practica_Eco727/Practica_Eco727.csproj -f net8.0-android -c Release -o output
+    artifacts:
+      - output/**/*.apk

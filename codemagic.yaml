@@ -5,17 +5,6 @@ workflows:
       vars:
         DOTNET_VERSION: "8.0.x"
     scripts:
-      # Instala .NET SDK
-      - name: Install .NET SDK
-        script: |
-          sudo apt-get update
-          sudo apt-get install -y dotnet-sdk-8.0
-
-      # Instala MAUI workload
-      - name: Install MAUI workload
-        script: |
-          dotnet workload install maui
-
       # Build Android APK
       - name: Build Android APK
         script: |

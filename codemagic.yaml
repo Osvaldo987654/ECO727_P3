@@ -2,7 +2,6 @@ workflows:
   build-mobile:
     name: Build MAUI Android & iOS
     environment:
-      os: macos
       vars:
         DOTNET_VERSION: "8.0.x"
     scripts:

@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 <PropertyGroup>
-    <!-- Target frameworks válidos para .NET 8 / MAUI -->
-    <TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
-    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+    <!-- Target frameworks válidos para .NET 10 / MAUI -->
+    <TargetFrameworks>net10.0-android;net10.0-ios;net10.0-maccatalyst</TargetFrameworks>
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net10.0-windows10.0.19041.0</TargetFrameworks>
 
     <OutputType>Exe</OutputType>
     <RootNamespace>Practica_Eco727</RootNamespace>
@@ -31,52 +31,50 @@
     <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 </PropertyGroup>
 
-	<ItemGroup>
-		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\eco727icon.png" Color="white" ForegroundScale="0.65" />
-		
+<ItemGroup>
+    <!-- App Icon -->
+    <MauiIcon Include="Resources\AppIcon\eco727icon.png" Color="white" ForegroundScale="0.65" />
+    
+    <!-- Splash Screen -->
+    <MauiSplashScreen Include="Resources\Splash\eco727icon.png" Color="#000000" BaseSize="128,128" />
+    
+    <!-- Images -->
+    <MauiImage Include="Resources\Images\*" />
+    <MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+    
+    <!-- Custom Fonts -->
+    <MauiFont Include="Resources\Fonts\*" />
 
-		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\eco727icon.png" Color="#000000" BaseSize="128,128" />
-		
+    <!-- Raw Assets -->
+    <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+</ItemGroup>
 
-		<!-- Images -->
-		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
-		
-		<!-- Custom Fonts -->
-		<MauiFont Include="Resources\Fonts\*" />
+<ItemGroup>
+  <None Remove="Resources\AppIcon\eco727icon.png" />
+  <None Remove="Resources\Splash\eco727icon.png" />
+</ItemGroup>
 
-		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
-		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-	</ItemGroup>
+<ItemGroup>
+    <PackageReference Include="FirebaseAuth" Version="2.0.6" />
+    <PackageReference Include="FirebaseDatabase.net" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+    <PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
+</ItemGroup>
 
-	<ItemGroup>
-	  <None Remove="Resources\AppIcon\eco727icon.png" />
-	  <None Remove="Resources\Splash\eco727icon.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="FirebaseAuth" Version="2.0.6" />
-		<PackageReference Include="FirebaseDatabase.net" Version="5.0.0" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Essentials" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="Views\AddCancionPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\EditCancionPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\ListCancionPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\SearchCancionPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	</ItemGroup>
+<ItemGroup>
+  <MauiXaml Update="Views\AddCancionPage.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </MauiXaml>
+  <MauiXaml Update="Views\EditCancionPage.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </MauiXaml>
+  <MauiXaml Update="Views\ListCancionPage.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </MauiXaml>
+  <MauiXaml Update="Views\SearchCancionPage.xaml">
+    <Generator>MSBuild:Compile</Generator>
+  </MauiXaml>
+</ItemGroup>
 
 </Project>

@@ -2,6 +2,7 @@ workflows:
   build-mobile:
     name: Build MAUI Android & iOS
     environment:
+      os: macos
       vars:
         DOTNET_VERSION: "8.0.x"
     scripts:
@@ -11,12 +12,10 @@ workflows:
           dotnet publish Practica_Eco727/Practica_Eco727.csproj -f net8.0-android -c Release -o output/android
 
       # Build iOS IPA (requiere Mac runner y certificados)
-      # Descomenta esta sección solo si ya subiste certificados Apple a Codemagic
       # - name: Build iOS IPA
       #   script: |
       #     dotnet publish Practica_Eco727/Practica_Eco727.csproj -f net8.0-ios -c Release -o output/ios
 
-    # Artifacts a descargar después de la build
     artifacts:
       - output/android/**/*.apk
       # - output/ios/**/*.ipa

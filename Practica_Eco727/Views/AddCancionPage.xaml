@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica_Eco727.Views.AddCancionPage"
+             Title="AddCancionPage">
+
+    <StackLayout Padding="20">
+        
+        <Label Text="Agregar Nueva Canción" FontSize="24" HorizontalOptions="Center" />
+
+        <Entry x:Name="TituloEntry" Placeholder="Título de la canción" />
+        <Entry x:Name="InterpreteEntry" Placeholder="Nombre del interprete" />
+        <Entry x:Name="GeneroEntry" Placeholder="Género musical de la canción" />
+        <Entry x:Name="NacionalidadEntry" Placeholder="Nacionalidad de  la canción" />
+        <Entry x:Name="AnioLanzamientoEntry" Placeholder="Año de lanzamiento de la canción" />
+       
+        
+        <Button Text="Guardar Canción" 
+                BackgroundColor="#2196F3" 
+                TextColor="White" 
+                Clicked="OnAddCancionClicked"/>
+
+
+
+        <!-- BOTÓN DE VOLVER / SALIR -->
+        <Button
+             Text="⬅️ Volver"
+             BackgroundColor="#1565C0"
+        TextColor="White"
+        CornerRadius="12"
+        HeightRequest="50"
+        Margin="0,10,0,0"
+        Clicked="OnBackClicked" />
+
+
+    </StackLayout>
+
+
+ 
+
+</ContentPage>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica_Eco727.Views.ListCancionPage">
+
+    <VerticalStackLayout Padding="10" Spacing="10">
+
+        <!-- Título -->
+        <Label Text="🎵 Lista de Canciones"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="{AppThemeBinding Light=#1A73E8, Dark=#79B4FF}" />
+
+        <!-- 🔍 Campo de búsqueda -->
+        <Entry x:Name="SearchEntry"
+               Placeholder="Buscar por título, intérprete o género..."
+               ClearButtonVisibility="WhileEditing"
+               TextChanged="OnSearchTextChanged"
+               BackgroundColor="{AppThemeBinding Light=White, Dark=#333}"
+               Margin="0,10,0,10" />
+
+        <!-- Lista en formato TARJETA -->
+        <CollectionView x:Name="CancionesListView"
+                        SelectionMode="None">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <!-- Tarjeta -->
+                    <Frame Margin="0,0,0,12"
+                           Padding="12"
+                           CornerRadius="12"
+                           BorderColor="#1976D2"
+                           BackgroundColor="{AppThemeBinding Light=White, Dark=#2C2C2C}"
+                           HasShadow="True">
+
+                        <VerticalStackLayout Spacing="8">
+
+                            <!-- Título de la canción -->
+                            <Label Text="{Binding Titulo}"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="{AppThemeBinding Light=#0D47A1, Dark=#90CAF9}" />
+
+                            <!-- Información secundaria -->
+                            <Grid ColumnDefinitions="Auto,*"
+                                  RowDefinitions="Auto,Auto,Auto,Auto"
+                                  ColumnSpacing="6"
+                                  RowSpacing="4">
+
+                                <Label Grid.Row="0" Grid.Column="0" Text="🎤 Intérprete:" FontAttributes="Bold" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Interprete}" />
+
+                                <Label Grid.Row="1" Grid.Column="0" Text="🎶 Género:" FontAttributes="Bold" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Genero}" />
+
+                                <Label Grid.Row="2" Grid.Column="0" Text="🌎 Nacionalidad:" FontAttributes="Bold" />
+                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Nacionalidad}" />
+
+                                <Label Grid.Row="3" Grid.Column="0" Text="📅 Año:" FontAttributes="Bold" />
+                                <Label Grid.Row="3" Grid.Column="1" Text="{Binding AnioLanzamiento}" />
+
+                            </Grid>
+
+                            <!-- Acciones -->
+                            <HorizontalStackLayout Spacing="10"
+                                                   Margin="0,8,0,0"
+                                                   HorizontalOptions="End">
+
+                                <Button Text="✏️ Editar"
+                                        BackgroundColor="#0288D1"
+                                        TextColor="White"
+                                        CornerRadius="8"
+                                        WidthRequest="90"
+                                        Clicked="OnEditCancionClicked" />
+
+                                <Button Text="🗑️ Borrar"
+                                        BackgroundColor="#D32F2F"
+                                        TextColor="White"
+                                        CornerRadius="8"
+                                        WidthRequest="90"
+                                        Clicked="OnDeleteCancionClicked" />
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                    </Frame>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <!-- BOTÓN DE VOLVER / SALIR -->
+        <Button
+            Text="⬅️ Volver"
+            BackgroundColor="#1565C0"
+            TextColor="White"
+            CornerRadius="12"
+            HeightRequest="50"
+            Margin="0,10,0,0"
+            Clicked="OnBackClicked" />
+
+    </VerticalStackLayout>
+</ContentPage>

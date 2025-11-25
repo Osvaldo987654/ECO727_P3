@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica_Eco727.Views.SearchCancionPage"
+             Title="Buscar Canción">
+
+    <ContentPage.Resources>
+
+        <!-- Estilo general de etiquetas -->
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Light=#333, Dark=White}" />
+        </Style>
+
+        <!-- Estilo para títulos dentro de tarjetas -->
+        <Style x:Key="TitleLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="{AppThemeBinding Light=#0D47A1, Dark=#90CAF9}" />
+        </Style>
+
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <!-- Título -->
+        <Label
+            FontAttributes="Bold"
+            FontSize="26"
+            HorizontalOptions="Center"
+            Text="🔍 Buscar Canción"
+            TextColor="{AppThemeBinding Light=#1A73E8, Dark=#79B4FF}" />
+
+        <!-- Campo de búsqueda -->
+        <Entry
+            x:Name="SearchEntry"
+            BackgroundColor="{AppThemeBinding Light=White, Dark=#333}"
+            ClearButtonVisibility="WhileEditing"
+            Placeholder="Escribe el título o intérprete..."
+            TextChanged="OnSearchTextChanged" />
+
+        <!-- Resultados como TARJETAS -->
+        <CollectionView
+            x:Name="ResultsListView"
+            SelectionMode="None">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <!-- TARJETA -->
+                    <Frame Margin="0,0,0,12"
+                           Padding="12"
+                           CornerRadius="12"
+                           BorderColor="#1976D2"
+                           BackgroundColor="{AppThemeBinding Light=White, Dark=#2C2C2C}"
+                           HasShadow="True">
+
+                        <VerticalStackLayout Spacing="8">
+
+                            <!-- TÍTULO de la canción -->
+                            <Label Text="{Binding Titulo}"
+                                   Style="{StaticResource TitleLabelStyle}" />
+
+                            <!-- Información -->
+                            <Grid ColumnDefinitions="Auto,*"
+                                  RowDefinitions="Auto,Auto,Auto,Auto"
+                                  ColumnSpacing="6"
+                                  RowSpacing="4">
+
+                                <Label Grid.Row="0" Grid.Column="0" Text="🎤 Intérprete:" FontAttributes="Bold" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Interprete}" />
+
+                                <Label Grid.Row="1" Grid.Column="0" Text="🎶 Género:" FontAttributes="Bold" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Genero}" />
+
+                                <Label Grid.Row="2" Grid.Column="0" Text="🌎 Nacionalidad:" FontAttributes="Bold" />
+                                <Label Grid.Row="2" Grid.Column="1" Text="{Binding Nacionalidad}" />
+
+                                <Label Grid.Row="3" Grid.Column="0" Text="📅 Año:" FontAttributes="Bold" />
+                                <Label Grid.Row="3" Grid.Column="1" Text="{Binding AnioLanzamiento}" />
+
+                            </Grid>
+
+                        </VerticalStackLayout>
+
+                    </Frame>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <!-- BOTÓN DE VOLVER / SALIR -->
+        <Button
+            Text="⬅️ Volver"
+            BackgroundColor="#1565C0"
+            TextColor="White"
+            CornerRadius="12"
+            HeightRequest="50"
+            Margin="0,10,0,0"
+            Clicked="OnBackClicked" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica_Eco727.MainPage">
+
+    <!--  Estilos globales  -->
+    <ContentPage.Resources>
+
+        <!--  Botones del menú  -->
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="Margin" Value="0,10" />
+            <Setter Property="BackgroundColor" Value="#0077FF" />
+            <Setter Property="TextColor" Value="White" />
+        </Style>
+
+        <!--  Tarjeta contenedor  -->
+        <Style TargetType="Frame">
+            <Setter Property="CornerRadius" Value="18" />
+            <Setter Property="Padding" Value="25" />
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="BackgroundColor" Value="White" />
+        </Style>
+
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <!--  Imagen representativa -->
+            <Image
+            Margin="0,10"
+            Aspect="AspectFill"
+            HeightRequest="100"
+            HorizontalOptions="Center"
+            Source="music_banner.png"
+            WidthRequest="100" />
+
+            <Label
+            FontAttributes="Bold"
+            FontSize="30"
+            HorizontalOptions="Center"
+            Text="Menú Principal de Canciones" />
+
+            <!--  Contenedor del menú  -->
+            <Frame>
+                <VerticalStackLayout Spacing="15">
+
+                    <Button 
+                    Clicked="OnAddCancionClicked"
+                    Text="➕ Agregar Canción" />
+
+                    <Button 
+                    Clicked="OnSearchCancionClicked"
+                    Text="🔍 Buscar Canción" />
+
+                    <Button 
+                    Clicked="OnListCancionClicked"
+                    Text="📋 Listar Canciones" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!--  Botón cerrar -->
+            <Button
+            BackgroundColor="DarkRed"
+            Clicked="OnLogoutClicked"
+            Text="🚪 Cerrar" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+
+</ContentPage>

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "951574520336",
+    "firebase_url": "https://practicaeco727-default-rtdb.firebaseio.com",
+    "project_id": "practicaeco727",
+    "storage_bucket": "practicaeco727.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951574520336:android:91a9d227f0aa0233e9a095",
+        "android_client_info": {
+          "package_name": "practica727.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr1zqduR2drzzj7kKNa7O79u00ALS13VQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

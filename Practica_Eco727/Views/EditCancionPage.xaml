@@ -13,7 +13,7 @@
         <Entry x:Name="InterpreteEntry" Placeholder="Nombre del interprete" />
         <Entry x:Name="GeneroEntry" Placeholder="Género musical de la canción" />
         <Entry x:Name="NacionalidadEntry" Placeholder="Nacionalidad de la canción" />
-        <Entry x:Name="AnioLanzamientoEntry" Placeholder="Año de lanzamiento de la canción" />
+        <Entry x:Name="AnioLanzamientoEntry" Placeholder="Año de lanamiento de la canción" />
 
 
         <Button Text="Actualizar Canción" 
@@ -22,6 +22,15 @@
                 Clicked="OnUpdateCancionClicked"/>
 
 
+        <!-- BOTÓN DE VOLVER / SALIR -->
+        <Button
+        Text="⬅️ Volver"
+        BackgroundColor="#1565C0"
+        TextColor="White"
+        CornerRadius="12"
+        HeightRequest="50"
+        Margin="0,10,0,0"
+        Clicked="OnBackClicked" />
 
     </StackLayout>
 </ContentPage>

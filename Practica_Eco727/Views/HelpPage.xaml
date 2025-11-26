@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica_Eco727.Views.HelpPage"
+             Title="Ayuda">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- CLIENTE -->
+            <Label Text="Información del Cliente"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <Frame>
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Desarrollado para:" FontAttributes="Bold"/>
+                    <Label Text="Estudiantina de la UPIICSA del IPN"/>
+
+                    <Label Text="Correo:" FontAttributes="Bold"/>
+
+                    <!-- CORREO  -->
+                    <Label Text="estudiantina.upiicsa@gmail.com"
+                           TextColor="Blue">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding OpenUrlCommand}" 
+                                CommandParameter="mailto:estudiantina.upiicsa@gmail.com"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Text="Redes Sociales:" FontAttributes="Bold"/>
+
+                    <!-- YOUTUBE -->
+                    <Label Text="YouTube"
+                           FontAttributes="Bold"/>
+
+                    <Label Text="Abrir canal"
+                           TextColor="Blue">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding OpenUrlCommand}" 
+                                CommandParameter="https://www.youtube.com/@estudiantinaupiicsa8448"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <!-- FACEBOOK -->
+                    <Label Text="Facebook"
+                           FontAttributes="Bold"/>
+
+                    <Label Text="Abrir perfil"
+                           TextColor="Blue">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding OpenUrlCommand}" 
+                                CommandParameter="https://www.facebook.com/estudiantina.de.la.upiicsa.del.ipn"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <!-- WHATSAPP -->
+                    <Label Text="WhatsApp"
+                           FontAttributes="Bold"/>
+
+                    <Label Text="Enviar mensaje"
+                           TextColor="Blue">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding OpenUrlCommand}" 
+                                CommandParameter="https://wa.me/5215533430365"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                </VerticalStackLayout>
+            </Frame>
+
+
+            <!-- DESARROLLADOR -->
+            <Label Text="Información del Desarrollador"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+            <Frame>
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="Nombre:" FontAttributes="Bold"/>
+                    <Label Text="Miguel Osvaldo Cisneros Fernández"/>
+
+                    <Label Text="Correo de contacto:" FontAttributes="Bold"/>
+
+                    <!-- CORREOS  -->
+                    <Label Text="miguel.cisneros.127@soycecytem.mx"
+                           TextColor="Blue">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding OpenUrlCommand}" 
+                                CommandParameter="mailto:miguel.cisneros.127@soycecytem.mx"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Text="cifmosvaldo@gmail.com"
+                           TextColor="Blue">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer 
+                                Command="{Binding OpenUrlCommand}" 
+                                CommandParameter="mailto:cifmosvaldo@gmail.com"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Text="WhatsApp"
+                     FontAttributes="Bold"/>
+
+                    <Label Text="Enviar mensaje"
+                    TextColor="Blue">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer 
+                            Command="{Binding OpenUrlCommand}" 
+                            CommandParameter="https://wa.me/5215533430365"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Label Text="Soporte:" FontAttributes="Bold"/>
+                    <Label Text="Si tienes dudas sobre el uso de la app, puedes enviarme un mensaje y con gusto te ayudo."/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- VERSION -->
+            <Frame>
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Versión de la aplicación:" FontAttributes="Bold"/>
+                    <Label Text="1.0.0"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- BOTON VOLVER -->
+            <Button
+                Text="⬅️ Volver"
+                BackgroundColor="#1565C0"
+                TextColor="White"
+                CornerRadius="12"
+                HeightRequest="50"
+                Margin="0,10,0,0"
+                Clicked="OnBackClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

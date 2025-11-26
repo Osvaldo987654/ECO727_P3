@@ -7,7 +7,7 @@
     
     <StackLayout Padding="20">
 
-        <Label Text="Agregar Nueva Canción" FontSize="24" HorizontalOptions="Center" />
+        <Label Text="Editar Canción" FontSize="24" HorizontalOptions="Center" />
 
         <Entry x:Name="TituloEntry" Placeholder="Título de la canción" />
         <Entry x:Name="InterpreteEntry" Placeholder="Nombre del interprete" />

@@ -30,15 +30,6 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="25">
 
-            <!--  Imagen representativa -->
-            <Image
-            Margin="0,10"
-            Aspect="AspectFill"
-            HeightRequest="100"
-            HorizontalOptions="Center"
-            Source="music_banner.png"
-            WidthRequest="100" />
-
             <Label
             FontAttributes="Bold"
             FontSize="30"
@@ -60,9 +51,17 @@
                     <Button 
                     Clicked="OnListCancionClicked"
                     Text="📋 Listar Canciones" />
+                    
 
                 </VerticalStackLayout>
             </Frame>
+
+            <!--  Botón ayuda -->
+            <Button 
+            Text="❓ Ayuda"
+            Clicked="OnHelpClicked"
+            BackgroundColor="#009688"
+            />
 
             <!--  Botón cerrar -->
             <Button

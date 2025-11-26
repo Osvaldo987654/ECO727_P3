@@ -26,6 +26,14 @@ public partial class MainPage : ContentPage
         await Navigation.PushAsync(new ListCancionPage());
     }
 
+
+
+    private async void OnHelpClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new HelpPage());
+    }
+
+
     private async void OnLogoutClicked(object sender, EventArgs e)
     {
         bool confirm = await DisplayAlert("Cerrar Sesión", "¿Deseas cerrar sesión?", "Sí", "No");
@@ -33,13 +41,14 @@ public partial class MainPage : ContentPage
         if (confirm)
         {
             // Cerrar sesión (FirebaseAuth, Preferencias, etc.)
-#if ANDROID
-            Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
-#elif WINDOWS
+        #if ANDROID
+                    Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+        #elif IOS
+            // iOS no permite cerrar la app programáticamente.
+            // Aquí podrías limpiar datos, cerrar sesión o navegar a Login.
+        #elif WINDOWS
             Application.Current.Quit();
-#endif
-
-            // await Navigation.PushAsync(new LoginPage());
+        #endif
         }
     }
 

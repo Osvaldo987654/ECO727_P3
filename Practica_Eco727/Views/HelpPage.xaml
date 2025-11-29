@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Practica_Eco727.Views.HelpPage"
-             Title="Ayuda">
+             Title="Ayuda"
+             BackgroundColor="{AppThemeBinding Light='White', Dark='#121212'}">
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
@@ -11,19 +12,29 @@
             <Label Text="Información del Cliente"
                    FontSize="26"
                    FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light='Black', Dark='White'}"
                    HorizontalOptions="Center"/>
 
-            <Frame>
+            <Frame BackgroundColor="{AppThemeBinding Light='White', Dark='#1E1E1E'}"
+                   BorderColor="{AppThemeBinding Light='#CCCCCC', Dark='#333333'}"
+                   CornerRadius="12"
+                   Padding="15">
+
                 <VerticalStackLayout Spacing="10">
 
-                    <Label Text="Desarrollado para:" FontAttributes="Bold"/>
-                    <Label Text="Estudiantina de la UPIICSA del IPN"/>
+                    <Label Text="Desarrollado para:" 
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
+                    <Label Text="Estudiantina de la UPIICSA del IPN"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
 
-                    <Label Text="Correo:" FontAttributes="Bold"/>
+                    <Label Text="Correo:" 
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
 
-                    <!-- CORREO  -->
+                    <!-- CORREO -->
                     <Label Text="estudiantina.upiicsa@gmail.com"
-                           TextColor="Blue">
+                           TextColor="{AppThemeBinding Light='#1565C0', Dark='#82B1FF'}">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer 
                                 Command="{Binding OpenUrlCommand}" 
@@ -31,14 +42,17 @@
                         </Label.GestureRecognizers>
                     </Label>
 
-                    <Label Text="Redes Sociales:" FontAttributes="Bold"/>
+                    <Label Text="Redes Sociales:" 
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
 
                     <!-- YOUTUBE -->
                     <Label Text="YouTube"
-                           FontAttributes="Bold"/>
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
 
                     <Label Text="Abrir canal"
-                           TextColor="Blue">
+                           TextColor="{AppThemeBinding Light='#1565C0', Dark='#82B1FF'}">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer 
                                 Command="{Binding OpenUrlCommand}" 
@@ -48,10 +62,11 @@
 
                     <!-- FACEBOOK -->
                     <Label Text="Facebook"
-                           FontAttributes="Bold"/>
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
 
                     <Label Text="Abrir perfil"
-                           TextColor="Blue">
+                           TextColor="{AppThemeBinding Light='#1565C0', Dark='#82B1FF'}">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer 
                                 Command="{Binding OpenUrlCommand}" 
@@ -61,10 +76,11 @@
 
                     <!-- WHATSAPP -->
                     <Label Text="WhatsApp"
-                           FontAttributes="Bold"/>
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
 
                     <Label Text="Enviar mensaje"
-                           TextColor="Blue">
+                           TextColor="{AppThemeBinding Light='#1565C0', Dark='#82B1FF'}">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer 
                                 Command="{Binding OpenUrlCommand}" 
@@ -80,19 +96,28 @@
             <Label Text="Información del Desarrollador"
                    FontSize="26"
                    FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light='Black', Dark='White'}"
                    HorizontalOptions="Center"/>
 
-            <Frame>
+            <Frame BackgroundColor="{AppThemeBinding Light='White', Dark='#1E1E1E'}"
+                   BorderColor="{AppThemeBinding Light='#CCCCCC', Dark='#333333'}"
+                   CornerRadius="12"
+                   Padding="15">
+
                 <VerticalStackLayout Spacing="10">
 
-                    <Label Text="Nombre:" FontAttributes="Bold"/>
-                    <Label Text="Miguel Osvaldo Cisneros Fernández"/>
+                    <Label Text="Nombre:"
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
+                    <Label Text="Miguel Osvaldo Cisneros Fernández"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
 
-                    <Label Text="Correo de contacto:" FontAttributes="Bold"/>
+                    <Label Text="Correo de contacto:"
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
 
-                    <!-- CORREOS  -->
                     <Label Text="miguel.cisneros.127@soycecytem.mx"
-                           TextColor="Blue">
+                           TextColor="{AppThemeBinding Light='#1565C0', Dark='#82B1FF'}">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer 
                                 Command="{Binding OpenUrlCommand}" 
@@ -101,7 +126,7 @@
                     </Label>
 
                     <Label Text="cifmosvaldo@gmail.com"
-                           TextColor="Blue">
+                           TextColor="{AppThemeBinding Light='#1565C0', Dark='#82B1FF'}">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer 
                                 Command="{Binding OpenUrlCommand}" 
@@ -110,27 +135,40 @@
                     </Label>
 
                     <Label Text="WhatsApp"
-                     FontAttributes="Bold"/>
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
 
                     <Label Text="Enviar mensaje"
-                    TextColor="Blue">
+                           TextColor="{AppThemeBinding Light='#1565C0', Dark='#82B1FF'}">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer 
-                            Command="{Binding OpenUrlCommand}" 
-                            CommandParameter="https://wa.me/5215533430365"/>
+                                Command="{Binding OpenUrlCommand}" 
+                                CommandParameter="https://wa.me/5215533430365"/>
                         </Label.GestureRecognizers>
                     </Label>
 
-                    <Label Text="Soporte:" FontAttributes="Bold"/>
-                    <Label Text="Si tienes dudas sobre el uso de la app, puedes enviarme un mensaje y con gusto te ayudo."/>
+                    <Label Text="Soporte:"
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
+
+                    <Label Text="Si tienes dudas sobre el uso de la app, puedes enviarme un mensaje y con gusto te ayudo."
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
                 </VerticalStackLayout>
             </Frame>
 
+
             <!-- VERSION -->
-            <Frame>
+            <Frame BackgroundColor="{AppThemeBinding Light='White', Dark='#1E1E1E'}"
+                   BorderColor="{AppThemeBinding Light='#CCCCCC', Dark='#333333'}"
+                   CornerRadius="12"
+                   Padding="15">
+
                 <VerticalStackLayout Spacing="10">
-                    <Label Text="Versión de la aplicación:" FontAttributes="Bold"/>
-                    <Label Text="1.0.0"/>
+                    <Label Text="Versión de la aplicación:"
+                           FontAttributes="Bold"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
+                    <Label Text="1.0.0"
+                           TextColor="{AppThemeBinding Light='Black', Dark='White'}"/>
                 </VerticalStackLayout>
             </Frame>
 

@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Practica_Eco727.Views.ListCancionPage">
 
+    <ScrollView>
     <VerticalStackLayout Padding="10" Spacing="10">
-
-        <!-- Título -->
+    
+            <!-- Título -->
         <Label Text="🎵 Lista de Canciones"
                FontSize="26"
                FontAttributes="Bold"
@@ -102,6 +103,7 @@
             HeightRequest="50"
             Margin="0,10,0,0"
             Clicked="OnBackClicked" />
-
+    
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

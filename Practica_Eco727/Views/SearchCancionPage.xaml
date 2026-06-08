@@ -21,8 +21,8 @@
         </Style>
 
     </ContentPage.Resources>
-
-    <VerticalStackLayout Padding="20" Spacing="15">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
 
         <!-- Título -->
         <Label
@@ -102,5 +102,5 @@
             Clicked="OnBackClicked" />
 
     </VerticalStackLayout>
-
+   </ScrollView>
 </ContentPage>

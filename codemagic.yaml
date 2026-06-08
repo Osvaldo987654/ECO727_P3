@@ -21,12 +21,17 @@ workflows:
         script: |
           $DOTNET workload install maui android
 
+      - name: Accept Android Licenses
+        script: |
+          yes | sdkmanager --licenses
+
       - name: Install Android Dependencies
         script: |
           $DOTNET build Practica_Eco727/Practica_Eco727.csproj \
             -t:InstallAndroidDependencies \
             -f net10.0-android \
-            -p:AndroidSdkDirectory=/usr/local/share/android-sdk
+            -p:AndroidSdkDirectory=/usr/local/share/android-sdk \
+            -p:AcceptAndroidSDKLicenses=True
 
       - name: Build Android APK
         script: |

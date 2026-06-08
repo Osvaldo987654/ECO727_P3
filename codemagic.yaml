@@ -3,29 +3,37 @@ workflows:
     name: Build MAUI Android APK
     max_build_duration: 60
     instance_type: mac_mini_m2
+
     environment:
       vars:
-        DOTNET_VERSION: "10.0.100"   # versión exacta para .NET 10
+        DOTNET_VERSION: "10.0.100"
         DOTNET_PATH: $HOME/.dotnet
         DOTNET: $DOTNET_PATH/dotnet
+
     scripts:
-      # Instalar .NET SDK
       - name: Install .NET SDK
         script: |
           curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --version $DOTNET_VERSION --install-dir $DOTNET_PATH
           export PATH=$DOTNET_PATH:$PATH
           $DOTNET --version
 
-      # Instalar MAUI workload para Android
       - name: Install MAUI workload
         script: |
-          $DOTNET workload install android maui
+          $DOTNET workload install maui android
 
-      # Compilar APK
+      - name: Install Android Dependencies
+        script: |
+          $DOTNET build Practica_Eco727/Practica_Eco727.csproj \
+            -t:InstallAndroidDependencies \
+            -f net10.0-android \
+            -p:AndroidSdkDirectory=/usr/local/share/android-sdk
+
       - name: Build Android APK
         script: |
-          $DOTNET publish Practica_Eco727/Practica_Eco727.csproj -f net10.0-android -c Release -o output/android
+          $DOTNET publish Practica_Eco727/Practica_Eco727.csproj \
+            -f net10.0-android \
+            -c Release \
+            -o output/android
 
-    # Archivos resultantes
     artifacts:
       - output/android/**/*.apk
